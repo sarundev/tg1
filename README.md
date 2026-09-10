@@ -50,9 +50,6 @@ Open the bot in Telegram and send `/start`.
   HTML (`<b>`, `<i>`, `<a href="">`), max 1024 characters.
 - **More buttons** — add rows to `main_keyboard()` in `bot.py`. Each inner list
   is one row, so two buttons in one list sit side by side.
-- **Bottom-left menu button** — `MENU_BUTTON_URL` must be **https** (Telegram
-  rejects http and `t.me` links for Mini Apps). Leave it empty to fall back to
-  the standard commands menu.
 - **New command** — add a handler in `main()` and a line in `BOT_COMMANDS`.
 
 ## Notes

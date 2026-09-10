@@ -24,9 +24,6 @@ REGISTER_URL = _env("REGISTER_URL", "https://t.me/sb24lucky98999")
 CHANNEL_URL = _env("CHANNEL_URL", "https://t.me/sb24lucky98999")
 SUPPORT_URL = _env("SUPPORT_URL", "https://t.me/sb24lucky98999")
 
-MENU_BUTTON_URL = _env("MENU_BUTTON_URL")
-MENU_BUTTON_TEXT = _env("MENU_BUTTON_TEXT", "ចុះឈ្មោះ")
-
 _admin = _env("ADMIN_CHAT_ID")
 ADMIN_CHAT_ID = int(_admin) if _admin.lstrip("-").isdigit() else None
 

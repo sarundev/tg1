@@ -1,7 +1,6 @@
 """JJ7SPORT-style promo bot.
 
-/start replies with a banner image, a caption and three link buttons,
-and pins a Mini-App button in the bottom-left corner of the chat.
+/start replies with a banner image, a caption and three link buttons.
 
 Run with:  python bot.py
 """
@@ -13,10 +12,7 @@ import sys
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    MenuButtonCommands,
-    MenuButtonWebApp,
     Update,
-    WebAppInfo,
 )
 from telegram.constants import ChatAction, ParseMode
 from telegram.error import TelegramError
@@ -147,22 +143,10 @@ async def on_error(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 async def post_init(application: Application) -> None:
-    """Register the '/' command list and the bottom-left menu button."""
+    """Register the '/' command list."""
     bot = application.bot
 
     await bot.set_my_commands(config.BOT_COMMANDS)
-
-    if config.MENU_BUTTON_URL.startswith("https://"):
-        await bot.set_chat_menu_button(
-            menu_button=MenuButtonWebApp(
-                text=config.MENU_BUTTON_TEXT,
-                web_app=WebAppInfo(url=config.MENU_BUTTON_URL),
-            )
-        )
-        log.info("Menu button set to Mini App: %s", config.MENU_BUTTON_URL)
-    else:
-        await bot.set_chat_menu_button(menu_button=MenuButtonCommands())
-        log.info("MENU_BUTTON_URL not an https URL — using the commands menu.")
 
     me = await bot.get_me()
     log.info("Running as @%s (id %s)", me.username, me.id)
