@@ -18,7 +18,7 @@ def _env(key: str, default: str = "") -> str:
 BOT_TOKEN = _env("BOT_TOKEN")
 
 BANNER_URL = _env("BANNER_URL")
-BANNER_PATH = BASE_DIR / _env("BANNER_PATH", "assets/poster1.jpg")
+BANNER_PATH = BASE_DIR / _env("BANNER_PATH", "assets/pic1.jpg")
 
 REGISTER_URL = _env("REGISTER_URL", "https://t.me/sb24lucky98999")
 CHANNEL_URL = _env("CHANNEL_URL", "https://t.me/sb24lucky98999")
